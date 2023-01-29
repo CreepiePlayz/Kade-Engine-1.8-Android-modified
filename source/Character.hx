@@ -390,6 +390,31 @@ class Character extends FlxSprite
 			default:
 				parseDataFile();
 		}
+		
+			case 'creepie-player':
+				var tex = Paths.getSparrowAtlas('Creepie', 'shared', true);
+				frames = tex;
+
+				trace(tex.frames.length);
+
+				animation.addByPrefix('idle', 'Creepie Idle', 24, false);
+				animation.addByPrefix('singUP', 'Creepie Up0', 24, false);
+				animation.addByPrefix('singLEFT', 'Creepie Left0', 24, false);
+				animation.addByPrefix('singRIGHT', 'Creepie Right0', 24, false);
+				animation.addByPrefix('singDOWN', 'Creepie Down0', 24, false);
+				animation.addByPrefix('singUPmiss', 'BF NOTE UP MISS', 24, false);
+				animation.addByPrefix('singLEFTmiss', 'Creepie Left Miss', 24, false);
+				animation.addByPrefix('singRIGHTmiss', 'Creepie Right Miss', 24, false);
+				animation.addByPrefix('singDOWNmiss', 'Creepie Down Miss', 24, false);
+				animation.addByPrefix('hey', 'Creepie HEY', 24, false);
+
+				loadOffsetFile(curCharacter);
+
+				playAnim('idle');
+
+				barColor = 0xFF03C500;
+
+				flipX = true;
 
 		if (curCharacter.startsWith('bf'))
 			dance();
